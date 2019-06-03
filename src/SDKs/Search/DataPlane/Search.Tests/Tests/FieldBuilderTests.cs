@@ -37,6 +37,7 @@ namespace Microsoft.Azure.Search.Tests
                     (DataType.Int32, nameof(ReflectableModel.Id)),
                     (DataType.Int64, nameof(ReflectableModel.BigNumber)),
                     (DataType.Double, nameof(ReflectableModel.Double)),
+                    (DataType.Decimal, nameof(ReflectableModel.Decimal)),
                     (DataType.Boolean, nameof(ReflectableModel.Flag)),
                     (DataType.DateTimeOffset, nameof(ReflectableModel.Time)),
                     (DataType.DateTimeOffset, nameof(ReflectableModel.TimeWithoutOffset)),

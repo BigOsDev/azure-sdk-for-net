@@ -48,6 +48,7 @@ namespace Microsoft.Azure.Search.Tests.Utilities
                         Field.NewSearchableString("descriptionFr", AnalyzerName.FrLucene),
                         Field.New("type", DataType.String, isSearchable: true, isFilterable: true, isFacetable: true),
                         Field.New("baseRate", DataType.Double, isFilterable: true, isFacetable: true),
+                        Field.New("price", DataType.Decimal, isFilterable: true, isFacetable: true),
                         Field.New("bedOptions", DataType.String, isSearchable: true, isFilterable: true, isFacetable: true),
                         Field.New("sleepsCount", DataType.Int32, isFilterable: true, isFacetable: true),
                         Field.New("smokingAllowed", DataType.Boolean, isFilterable: true, isFacetable: true),

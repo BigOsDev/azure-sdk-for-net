@@ -27,6 +27,7 @@ namespace Microsoft.Azure.Search
                     [typeof(int)] = DataType.Int32,
                     [typeof(long)] = DataType.Int64,
                     [typeof(double)] = DataType.Double,
+                    [typeof(Decimal)] = DataType.Decimal,
                     [typeof(bool)] = DataType.Boolean,
                     [typeof(DateTime)] = DataType.DateTimeOffset,
                     [typeof(DateTimeOffset)] = DataType.DateTimeOffset,

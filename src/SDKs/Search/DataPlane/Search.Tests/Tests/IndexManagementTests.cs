@@ -51,13 +51,15 @@ namespace Microsoft.Azure.Search.Tests
                         Field.NewSearchableString("descriptionFr", AnalyzerName.FrLucene),
                         Field.New("type", DataType.String, isSearchable: true, isFilterable: true, isFacetable: true),
                         Field.New("baseRate", DataType.Double, isKey: false, isSearchable: false, isFilterable: true, isFacetable: true),
+                        Field.New("price", DataType.Decimal, isKey: false, isSearchable: false, isFilterable: true, isFacetable: true),
                         Field.New("bedOptions", DataType.String, isSearchable: true, isFilterable: true, isFacetable: true),
                         Field.New("sleepsCount", DataType.Int32, isFilterable: true, isFacetable: true),
                         Field.New("smokingAllowed", DataType.Boolean, isFilterable: true, isFacetable: true),
                         Field.New("tags", DataType.Collection(DataType.String), isSearchable: true, isFilterable: true, isSortable: false, isFacetable: true)
                     }),
                     Field.New("totalGuests", DataType.Int64, isFilterable: true, isSortable: true, isFacetable: true, isRetrievable: false),
-                    Field.New("profitMargin", DataType.Double)
+                    Field.New("profitMargin", DataType.Double),
+                    Field.New("price", DataType.Decimal)
                 },
                 ScoringProfiles = new[]
                 {

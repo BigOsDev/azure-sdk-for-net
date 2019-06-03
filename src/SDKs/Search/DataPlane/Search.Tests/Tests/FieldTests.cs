@@ -220,6 +220,66 @@ namespace Microsoft.Azure.Search.Tests
             Assert.Equal(expectedField, actualField, new ModelComparer<Field>());
         }
 
+        //
+
+        [Fact]
+        public void CanBuildSearchableDecimalFieldViaConstructor()
+        {
+            var field = new Field("test", DataType.Decimal, AnalyzerName.FrMicrosoft);
+            AssertIsLeaf(field, "test", DataType.Decimal, AnalyzerName.FrMicrosoft);
+        }
+
+        [Fact]
+        public void CanBuildSearchableDecimalFieldViaFactoryMethod()
+        {
+            var field = Field.New("test", DataType.Decimal, false,true,true,false,false,false, AnalyzerName.EnLucene);
+            AssertIsLeaf(field, "test", DataType.Decimal, AnalyzerName.EnLucene);
+        }
+
+        [Fact]
+        public void SearchableDecimalFactoryMethodSetsAllProperties()
+        {
+            var expectedField =
+                new Field("test", DataType.Decimal)
+                {
+                    IsKey = true,
+                    IsRetrievable = true,
+                    IsSearchable = true,
+                    IsFilterable = true,
+                    IsSortable = true,
+                    IsFacetable = true,
+                    Analyzer = AnalyzerName.StandardAsciiFoldingLucene,
+                    SearchAnalyzer = null,
+                    IndexAnalyzer = null,
+                    SynonymMaps = new[] { "map" }
+                };
+
+            var actualField =
+              Field.New(
+                    name: expectedField.Name,
+                    dataType: expectedField.Type,
+                    isKey: expectedField.IsKey.Value,
+                    isRetrievable: expectedField.IsRetrievable.Value,
+                    isSearchable: expectedField.IsSearchable.Value,
+                    isFilterable: expectedField.IsFilterable.Value,
+                    isSortable: expectedField.IsSortable.Value,
+                    isFacetable: expectedField.IsFacetable.Value,
+                    analyzerName: expectedField.Analyzer,
+                    searchAnalyzerName: expectedField.SearchAnalyzer,
+                    indexAnalyzerName: expectedField.IndexAnalyzer,
+                    synonymMaps: expectedField.SynonymMaps);
+
+            Assert.Equal(expectedField, actualField, new ModelComparer<Field>());
+        }
+
+        [Fact]
+        public void CanBuildSearchableDecimalCollectionFieldViaConstructor()
+        {
+            var field = new Field("test", DataType.Collection(DataType.Decimal), AnalyzerName.DeMicrosoft);
+            AssertIsLeaf(field, "test", DataType.Collection(DataType.Decimal), AnalyzerName.DeMicrosoft);
+        }
+             
+       
         [Theory]
         [InlineData(DataType.AsString.Complex, false)]
         [InlineData(DataType.AsString.Complex, true)]

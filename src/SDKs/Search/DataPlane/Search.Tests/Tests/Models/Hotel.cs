@@ -150,6 +150,9 @@ namespace Microsoft.Azure.Search.Tests
         [IsFilterable, IsSortable, IsFacetable]
         public int? Rating { get; set; }
 
+        [IsFilterable, IsSortable, IsFacetable]
+        public decimal AveragePrice { get; set; }
+
         [IsFilterable, IsSortable]
         public GeographyPoint Location { get; set; }
 

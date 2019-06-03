@@ -38,6 +38,11 @@ namespace Microsoft.Azure.Search.Models
         public static readonly DataType Double = new DataType(AsString.Double);
 
         /// <summary>
+        /// Indicates that a field contains an IEEE decimal.
+        /// </summary>
+        public static readonly DataType Decimal = new DataType(AsString.Decimal);
+
+        /// <summary>
         /// Indicates that a field contains a Boolean value (true or false).
         /// </summary>
         public static readonly DataType Boolean = new DataType(AsString.Boolean);
@@ -150,6 +155,11 @@ namespace Microsoft.Azure.Search.Models
             /// Indicates that a field contains an IEEE double-precision floating point number.
             /// </summary>
             public const string Double = "Edm.Double";
+
+            /// <summary>
+            /// Indicates that a field contains an IEEE decimal.
+            /// </summary>
+            public const string Decimal = "Edm.Decimal";
 
             /// <summary>
             /// Indicates that a field contains a Boolean value (true or false).

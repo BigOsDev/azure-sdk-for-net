@@ -33,6 +33,7 @@ namespace Microsoft.Azure.Search.Tests.Utilities
                     Tags = new[] { "pool", "view", "wifi", "concierge" },
                     ParkingIncluded = false,
                     SmokingAllowed = false,
+                    AveragePrice = 150.20m,
                     LastRenovationDate = new DateTimeOffset(2010, 6, 27, 0, 0, 0, TimeSpan.Zero),
                     Rating = 5,
                     Location = GeographyPoint.Create(47.678581, -122.131577)
